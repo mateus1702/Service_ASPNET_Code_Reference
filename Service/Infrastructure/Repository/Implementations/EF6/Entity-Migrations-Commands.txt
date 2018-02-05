@@ -1,0 +1,2 @@
+﻿Enable-Migrations -EnableAutomaticMigrations -ProjectName EF6 -StartupProjectName REST_EndPoint
+Update-Database -ProjectName EF6 -StartupProjectName REST_EndPoint -script
