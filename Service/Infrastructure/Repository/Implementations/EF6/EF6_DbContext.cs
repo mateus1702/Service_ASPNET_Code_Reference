@@ -15,7 +15,18 @@ namespace EF6
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Task>();
+            modelBuilder.Entity<User>()
+                .HasMany(x => x.Tasks)
+                .WithRequired(x => x.User)
+                .HasForeignKey(x => x.UserId)
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Task>()
+                .HasRequired(x => x.User)
+                .WithMany(x => x.Tasks)
+                .HasForeignKey(x => x.UserId)
+                .WillCascadeOnDelete(true); ;
+
             base.OnModelCreating(modelBuilder);
         }
     }

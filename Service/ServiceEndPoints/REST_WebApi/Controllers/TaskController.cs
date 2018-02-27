@@ -1,5 +1,7 @@
 ﻿using DomainModel;
 using ServiceModel;
+using ServiceModel.DTO;
+using ServiceModel.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,30 +15,30 @@ namespace REST_WebApi.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class TaskController : ApiController
     {
-        // GET: api/Task
-        public IEnumerable<Task> Get()
+        [Route("api/taskfromuser/{userId}")]
+        [HttpGet]
+        public IEnumerable<TaskDTO> GetTasksFromUser(int userId)
         {
             TaskService service = new TaskService();
-            return service.ListTasks();
+            return service.ListTasks(userId);
         }
 
         // GET: api/Task/5
-        public Task Get(int id)
+        public TaskDTO Get(int id)
         {
             TaskService service = new TaskService();
             return service.ReadTask(id);
         }
 
-        // POST: api/Task
-        public int Post([FromBody]Task model)
+        public int Post([FromBody]TaskDTO dto)
         {
             TaskService service = new TaskService();
-            var Id = service.CreateTask(model);
+            var Id = service.CreateTask(dto);
             return Id;
         }
 
         // PUT: api/Task/5
-        public void Put(int id, [FromBody]Task model)
+        public void Put(int id, [FromBody]TaskDTO model)
         {
             model.Id = id;
             TaskService service = new TaskService();

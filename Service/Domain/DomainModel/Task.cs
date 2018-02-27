@@ -1,5 +1,4 @@
-﻿using RepositoryModel;
-using System;
+﻿using System;
 
 namespace DomainModel
 {
@@ -9,20 +8,9 @@ namespace DomainModel
 
         public DateTime Date { get; set; }
 
-        public string Owner { get; set; }
-
         public bool Done { get; set; }
 
-        public bool Validate()
-        {
-            var isValid = true;
-
-            if (string.IsNullOrEmpty(Name.Trim()))
-            {
-                isValid = false;
-            }            
-
-            return isValid;
-        }
+        public User User { get; set; }
+        public int UserId { get; set; }
     }
 }
