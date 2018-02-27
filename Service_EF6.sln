@@ -25,6 +25,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceEndPoints", "Service
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REST_WebApi", "Service\ServiceEndPoints\REST_WebApi\REST_WebApi.csproj", "{C7E3B250-79C8-44C2-8DEC-F2E868B2C0EC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{29E844C4-9BDF-41C7-AB78-C49B1ADE8D9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceTests", "Tests\ServiceTests\ServiceTests.csproj", "{B43B80C9-91C4-4EB3-A6B0-518A107C536E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,10 @@ Global
 		{C7E3B250-79C8-44C2-8DEC-F2E868B2C0EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7E3B250-79C8-44C2-8DEC-F2E868B2C0EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7E3B250-79C8-44C2-8DEC-F2E868B2C0EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B43B80C9-91C4-4EB3-A6B0-518A107C536E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B43B80C9-91C4-4EB3-A6B0-518A107C536E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B43B80C9-91C4-4EB3-A6B0-518A107C536E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B43B80C9-91C4-4EB3-A6B0-518A107C536E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +74,7 @@ Global
 		{B64CA470-2F01-4650-8926-A800FBF2B7AE} = {66770DFA-F821-471E-B947-F504726CCC18}
 		{1CAC4325-71FC-4AA2-B5D0-2C7E7437F79E} = {66770DFA-F821-471E-B947-F504726CCC18}
 		{C7E3B250-79C8-44C2-8DEC-F2E868B2C0EC} = {1CAC4325-71FC-4AA2-B5D0-2C7E7437F79E}
+		{B43B80C9-91C4-4EB3-A6B0-518A107C536E} = {29E844C4-9BDF-41C7-AB78-C49B1ADE8D9C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D14DBA8F-E7A9-4DF5-858A-8D07FAD0C486}
