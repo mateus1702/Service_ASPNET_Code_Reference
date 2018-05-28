@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using DomainModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -12,6 +13,11 @@ namespace Tests
     {
         private static Random RandomGenerator = new Random();
 
+        public UnitTestUserService()
+        {
+            AppDomain.CurrentDomain.SetData("DataDirectory", Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\App_Data")));
+        }
+
         [TestMethod]
         public void CreateUser()
         {
@@ -20,7 +26,7 @@ namespace Tests
             var userDTO = new UserDTO(
                 new User()
                 {
-                    Name = "User Name",                   
+                    Name = "User Name",
                 });
 
             var Id = service.CreateUser(userDTO);
@@ -88,7 +94,7 @@ namespace Tests
                     Name = "Task Name",
                     Date = DateTime.Now,
                     Done = true,
-                    UserId = userId,                    
+                    UserId = userId,
                 });
 
             var Id = taskService.CreateTask(taskDTO);
